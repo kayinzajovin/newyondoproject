@@ -42,7 +42,7 @@
       color: white;
       padding: 40px 30px;
       text-align: center;
-      position: relative;  
+      position: relative;
     }
 
     /*logo box styling*/
@@ -217,14 +217,42 @@
     }
     /*responsive design for smaller screens*/
     @media (max-width: 480px) {
-      .login-card {
+      body {
+        padding: 10px;
+      }
+      .form-card {
+        width: 100%;
+        margin: 20px auto;
+        padding: 20px;
         border-radius: 10px;
       }
-      .form-section {
-        padding: 30px 20px;
-      }
       .header-section {
-        padding: 30px 20px;
+        padding: 25px 20px;
+        border-radius: 12px;
+      }
+      .header-section h1 {
+        font-size: 20px;
+      }
+      .header-section p {
+        font-size: 12px;
+      }
+      .row {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .col {
+        width: 100%;
+      }
+      input,
+      select,
+      button {
+        font-size: 14px;
+        padding: 10px 12px;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
       }
     }
     /*decorative circu lar background effect*/
@@ -238,7 +266,7 @@
       background: rgba(245, 158, 11, 0.1);
       border-radius: 50%;
     }
-    .btn{
+    .btn {
       display: inline-block;
       padding: 12px 20px;
       background-color: #1f2937;
@@ -249,8 +277,8 @@
       cursor: pointer;
       text-align: left;
     }
-    .btn:hover{
-       color: #d97706;
+    .btn:hover {
+      color: #d97706;
     }
   </style>
 
@@ -264,71 +292,70 @@
           <h1>NYONDO</h1>
           <p>Hardware Management System</p>
         </div>
-<div class="form-section">
-    <div class="form-title">Sign In to Your Account </div>
-        <form>
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              placeholder="Please enter your username"
-              required
-            />
-          </div>
-
-           <div class="form-group">
-            <label for="email">EMAIL</label>
-            <input
-              type="text"
-              id="email"
-              placeholder="Please enter your email"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-              type="text"
-              id="password"
-              placeholder="Please enter your password"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="role">Login As</label>
-            <select id="role" required>
-              <option value="#" disabled selected>Select your role</option>
-              <option value="admin">Admin</option>
-              <option value="manager">Manager</option>
-              <option value="cashier">Cashier</option>
-              <option value="staff">Staff</option>
-            </select>
-          </div>
-          <div class="remember-forgot">
-            <div class="checkbox-group">
-              <input type="checkbox" id="remember" name="remember" />
-              <label
-                for="remember"
-                style="margin: 0; text-transform: none; font-weight: normal"
-                >Remember me</label
-              >
+        <div class="form-section">
+          <div class="form-title">Sign In to Your Account</div>
+          <form>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                placeholder="Please enter your username"
+                required
+              />
             </div>
-              
+
+            <div class="form-group">
+              <label for="email">EMAIL</label>
+              <input
+                type="text"
+                id="email"
+                placeholder="Please enter your email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="text"
+                id="password"
+                placeholder="Please enter your password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="role">Login As</label>
+              <select id="role" required>
+                <option value="#" disabled selected>Select your role</option>
+                <option value="admin">Admin</option>
+                <option value="manager">Manager</option>
+                <option value="cashier">Cashier</option>
+                <option value="staff">Staff</option>
+              </select>
+            </div>
+            <div class="remember-forgot">
+              <div class="checkbox-group">
+                <input type="checkbox" id="remember" name="remember" />
+                <label
+                  for="remember"
+                  style="margin: 0; text-transform: none; font-weight: normal"
+                  >Remember me</label
+                >
+              </div>
+            </div>
+
+            <button type="Submit" class="btn-login">Sign In</button>
+            <a href="dashboard.html" class="btn">DASHBOARD</a>
+          </form>
+          <div class="signup-section">
+            Forgot Password Please contact the Admin
           </div>
-         
-          <button type="Submit" class="btn-login">Sign In</button>
-          <a href="dashboard.html"  class="btn">DASHBOARD</a>
-        </form>
-        <div class="signup-section">
-          Forgot Password Please contact the Admin
-        </div>
-        <div class="footer-info">
-          @ 2026 Nyondo Hardware. All rights reserved.
+          <div class="footer-info">
+            @ 2026 Nyondo Hardware. All rights reserved.
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </body>
 </html>

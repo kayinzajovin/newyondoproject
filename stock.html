@@ -10,16 +10,44 @@
       box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
-      /*responsive design for smaller screens*/
+    /*responsive design for smaller screens*/
     @media (max-width: 480px) {
-      .login-card {
+      body {
+        padding: 10px;
+      }
+      .form-card {
+        width: 100%;
+        margin: 20px auto;
+        padding: 20px;
         border-radius: 10px;
       }
-      .form-section {
-        padding: 30px 20px;
-      }
       .header-section {
-        padding: 30px 20px;
+        padding: 25px 20px;
+        border-radius: 12px;
+      }
+      .header-section h1 {
+        font-size: 20px;
+      }
+      .header-section p {
+        font-size: 12px;
+      }
+      .row {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .col {
+        width: 100%;
+      }
+      input,
+      select,
+      button {
+        font-size: 14px;
+        padding: 10px 12px;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
       }
     }
     body {
@@ -151,11 +179,11 @@
       position: relative;
       z-index: 1;
     }
-    .title{
-         color: white; 
+    .title {
+      color: white;
     }
-    
-    .btn{
+
+    .btn {
       display: inline-block;
       padding: 12px 20px;
       background-color: #1f2937;
@@ -166,10 +194,9 @@
       cursor: pointer;
       align-items: right;
       margin-top: 20px;
-      
     }
-    .btn:hover{
-       color: #d97706;
+    .btn:hover {
+      color: #d97706;
     }
   </style>
   <body>
@@ -237,7 +264,9 @@
         </div>
 
         <button type="submit">UPDATE STOCK</button>
-         <a href="customer_registration.html"  class="btn">CUSTOMER REGISTRATION</a>
+        <a href="customer_registration.html" class="btn"
+          >CUSTOMER REGISTRATION</a
+        >
       </form>
     </div>
     <script>
