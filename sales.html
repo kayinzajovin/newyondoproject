@@ -142,6 +142,22 @@
      .title{
          color: white; 
     }
+    .btn{
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #1f2937;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      align-items: right;
+      margin-top: 20px;
+      
+    }
+    .btn:hover{
+       color: #d97706;
+    }
   </style>
   <body>
     <div class="form-card">
@@ -208,8 +224,9 @@
 
         <button type="submit">RECORD SALE</button>
       </form>
+       <a href="stock.html"  class="btn">STOCK FORM</a>
     </div>
-     <a href="stock.html">STOCK PAGE</a>
+    
     <script>
       //automatically set  today's date
       document.getElementByd("sale_date").ValueAsDate = new Date();

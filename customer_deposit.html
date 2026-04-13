@@ -142,6 +142,21 @@
     .title {
       color: white;
     }
+     .btn{
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #1f2937;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: left;
+      margin-top: 20px;
+    }
+    .btn:hover{
+       color: #d97706;
+    }
   </style>
   <body>
     <div class="form-card">
@@ -199,9 +214,10 @@
         </div>
 
         <button type="submit">RECORD DEPOSIT</button>
+        <a href="dashboard.html"  class="btn">DASHBOARD</a>
       </form>
     </div>
-    <a href="dashboard.html">DASHBOARD</a>
+    
     <script>
       //automatically set  today's date
       document.getElementByd("sale_date").ValueAsDate = new Date();

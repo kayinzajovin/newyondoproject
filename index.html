@@ -42,7 +42,7 @@
       color: white;
       padding: 40px 30px;
       text-align: center;
-      position: relative;
+      position: relative;  
     }
 
     /*logo box styling*/
@@ -227,7 +227,7 @@
         padding: 30px 20px;
       }
     }
-    /*decorative circular background effect*/
+    /*decorative circu lar background effect*/
     .header-section::before {
       content: "";
       position: absolute;
@@ -276,6 +276,16 @@
             />
           </div>
 
+           <div class="form-group">
+            <label for="email">EMAIL</label>
+            <input
+              type="text"
+              id="email"
+              placeholder="Please enter your email"
+              required
+            />
+          </div>
+
           <div class="form-group">
             <label for="password">Password</label>
             <input
@@ -288,7 +298,7 @@
           <div class="form-group">
             <label for="role">Login As</label>
             <select id="role" required>
-              <option value="" disabled selected>Select your role</option>
+              <option value="#" disabled selected>Select your role</option>
               <option value="admin">Admin</option>
               <option value="manager">Manager</option>
               <option value="cashier">Cashier</option>
@@ -304,13 +314,14 @@
                 >Remember me</label
               >
             </div>
-            <a href="#">Forgot password?</a>
+              
           </div>
+         
           <button type="Submit" class="btn-login">Sign In</button>
-          <a href="sales.html"  class="btn">SALES PAGE</a>
+          <a href="dashboard.html"  class="btn">DASHBOARD</a>
         </form>
         <div class="signup-section">
-          Don't have an account? <a href="#">Create one</a>
+          Forgot Password Please contact the Admin
         </div>
         <div class="footer-info">
           @ 2026 Nyondo Hardware. All rights reserved.
