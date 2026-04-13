@@ -108,17 +108,47 @@
     }
       /*responsive design for smaller screens*/
     @media (max-width: 480px) {
-      .login-card {
+      .sidebar{
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px;
+      }
+       .main {
+        margin-left: 0;
+        padding: 15px;
+
+      }
+       .cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+       .card {
+        font-size: 14px;
+      }
+       .header {
+        padding: 20px;
         border-radius: 10px;
       }
-      .form-section {
+       .form-card {
+        width: 100%;
         padding: 30px 20px;
       }
-      .header-section {
-        padding: 30px 20px;
+       .header-section h1 {
+        font-size: 14px;
+        padding: 10px 0;
+      }
+      .main {
+        padding: 20px;
+        margin-left: 0;
+      }
+      .menu a{
+        font-size: 14px;
+        padding: 10px 0;
       }
     }
-    .header-section p {
+
+    .card {
       font-size: 13px;
       opacity: 0.8;
       position: relative;
