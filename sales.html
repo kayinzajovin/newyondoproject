@@ -1,279 +1,290 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sales Form-Nyondo Summary</title>
-  </head>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-    body {
-      background-color: #f4f6f8;
-      margin: 0;
-      padding: 20px;
-    }
-    .form-card {
-      width: 550px;
-      margin: 40px auto;
-      padding: 50px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      /* border-top: 20px solid #1f2937; */
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NYONDO HARDWARE- SALES</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+
+  body {
+    background: #f4f6f8;
+    color: #111;
+  }
+
+  /*SIDE BAR*/
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #1f2937;
+    color: white;
+    padding: 20px;
+  }
+
+  .logo {
+    width: 55px;
+    height: 55px;
+    background: #f59e0b;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+
+  .brand {
+    text-align: center;
+    margin: 10px 0 25px;
+  }
+
+  .brand h2 {
+    font-size: 18px;
+  }
+
+  .brand p {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  .menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 0;
+    margin: 8px 0;
+    transition: 0.3s;
+    border-radius: 8px;
+  }
+
+  .menu a:hover,
+  .menu a.active {
+    background: #f59e0b;
+    color: white;
+    font-weight: 600;
+  }
+
+  /*MAIN */
+  .main {
+    margin-left: 250px;
+    padding: 30px;
+  }
+
+  .topbar {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+  }
+
+  .topbar h1 {
+    font-size: 20px;
+  }
+
+  /*LAYOUT */
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  h2 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #1f2937;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+  }
+
+  input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+  }
+
+  input:focus {
+    border-color: #f59e0b;
+  }
+
+  button {
+    width: 100%;
+    padding: 13px;
+    background: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  button:hover {
+    background: #f59e0b;
+    color: #1f2937;
+  }
+
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    background: #f9fafb;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+
+  .total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f59e0b;
+    margin-top: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .main {
+      margin-left: 0;
     }
 
-    .navbar {
-      background: #1f2937;
-      color: white;
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      font-size: 24px;
-      font-weight: bold;
-      text-align: center;
+    .container {
+      grid-template-columns: 1fr;
     }
 
-    h2 {
-      color: #1f2937;
-      margin-bottom: 25px;
-      border-bottom: 2px solid #f4f6f8;
-      padding-bottom: 10px;
-    }
-
-    .row {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-    .col {
-      flex: 1;
-    }
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: #1f2937;
-    }
-    /*responsive design for smaller screens*/
-    @media (max-width: 480px) {
-      body {
-        padding: 10px;
-      }
-      .form-card {
-        width: 100%;
-        margin: 20px auto;
-        padding: 20px;
-        border-radius: 10px;
-      }
-      .header-section {
-        padding: 25px 20px;
-        border-radius: 12px;
-      }
-      .header-section h1 {
-        font-size: 20px;
-      }
-      .header-section p {
-        font-size: 12px;
-      }
-      .row {
-        flex-direction: column;
-        gap: 15px;
-      }
-      .col {
-        width: 100%;
-      }
-      input,
-      select,
-      button {
-        font-size: 14px;
-        padding: 10px 12px;
-      }
-      .btn {
-        display: block;
-        width: 100%;
-        text-align: center;
-      }
-    }
-    /*logo box styling*/
-    .logo-box {
-      width: 60px;
-      height: 60px;
-      background: #f59e0b;
-    }
-    /*input and select field styling*/
-    input,
-    select {
+    .sidebar {
+      position: relative;
       width: 100%;
-      padding: 12px 15px;
-      border: 2px solid #e5e7eb;
-      border-radius: 8px;
-      font-size: 15px;
-      transition: all 0.3s ease;
-      background-color: #f9fafb;
+      height: auto;
     }
+  }
+</style>
 
-    input:hover,
-    select:hover {
-      border-color: #f59e0b;
-      box-shadow: 0 5px 15px rgba(245, 158, 11, 0.2);
-    }
+<body>
+  <!-- SIDE BAR -->
+  <div class="sidebar">
+    <div class="logo">N</div>
 
-    input:focus,
-    select:focus {
-      outline: none;
-      border-color: #1f2937;
-    }
-    button {
-      width: 100%;
-      padding: 14px;
-      background: #1f2937;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 20px;
-    }
-    button:hover {
-      background: #f59e0b;
-      transform: scale(1.01);
-    }
-
-    /*logo box styling*/
-    .logo-box {
-      width: 60px;
-      height: 60px;
-      background: #f59e0b;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      font-weight: bold;
-      color: #1f2937;
-      margin: 0 auto 15px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /*header section with gradient background*/
-    .header-section {
-      background: linear-gradient(135deg, #1f2937 0%, #2d3748 100%);
-      color: white;
-      padding: 40px 30px;
-      text-align: center;
-      position: relative;
-      border-radius: 20px;
-    }
-    .header-section p {
-      font-size: 13px;
-      opacity: 0.8;
-      position: relative;
-      z-index: 1;
-    }
-
-    /*header text styling*/
-    .header-section h1 {
-      font-size: 24px;
-      margin-bottom: 5px;
-      position: relative;
-      z-index: 1;
-    }
-    .title {
-      color: white;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background-color: #1f2937;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      align-items: right;
-      margin-top: 20px;
-    }
-    .btn:hover {
-      color: #d97706;
-    }
-  </style>
-  <body>
-    <div class="form-card">
-      <div class="header-section">
-        <div class="logo-box">N</div>
-
-        <h1>NYONDO</h1>
-        <p>Hardware Management System</p>
-        <h2 class="title">💰SALES FORM</h2>
-      </div>
-
-      <form>
-        <h2>ITEM DETAILS</h2>
-        <div class="row">
-          <div class="col">
-            <label>ITEM NAME</label>
-            <input type="text" placeholder="Please enter item name" required />
-          </div>
-
-          <div class="col">
-            <label>QUANTITY</label>
-            <input type="text" placeholder="Please enter Quantity" required />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label>COLOR</label>
-            <input type="text" placeholder="Please enter item color" required />
-          </div>
-
-          <div class="col">
-            <label>UNITY PRICE</label>
-            <input type="number" placeholder="Please enter Price" required />
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col">
-            <label>TYPE ITEM </label>
-            <input type="text" placeholder="e.g.Electronics" required />
-          </div>
-
-          <div class="col">
-            <label>BRAND OF ITEM</label>
-            <input type="text" placeholder="Please Brand name" required />
-          </div>
-        </div>
-        <h2>CUSTOMER DETAILS</h2>
-        <div class="row">
-          <div class="col">
-            <label>CUSTOMER NAME</label>
-            <input type="text" placeholder="Please enter full name" required />
-          </div>
-
-          <div class="col">
-            <label>CUSTOMER (CUSTOMER) </label>
-            <input
-              type="tel"
-              placeholder="Please enter phone number"
-              required
-            />
-          </div>
-        </div>
-
-        <button type="submit">RECORD SALE</button>
-      </form>
-      <a href="stock.html" class="btn">📦STOCK FORM</a>
+    <div class="brand">
+      <h2>NYONDO</h2>
+      <p>Hardware System</p>
     </div>
 
-    <script>
-      //automatically set  today's date
-      document.getElementByd("sale_date").ValueAsDate = new Date();
-    </script>
-  </body>
+    <div class="menu">
+      <a href="dashboard.html">🏠DASHBOARD</a>
+      <a href="index.html">🔐LOGIN PAGE</a>
+      <a href="sales.html" class="active">💰SALES PAGE</a>
+      <a href="stock.html">📦STOCK PAGE</a>
+      <a href="customer_registration.html">👥CUSTOMER REGISTRATION</a>
+      <a href="customer_deposit.html">💳CUSTOMER DEPOSIT</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="topbar">
+      <h1>SALES MODULE</h1>
+    </div>
+
+    <div class="container">
+      <div class="card">
+        <h2>ITEM DETAILS</h2>
+
+        <div class="grid">
+          <div>
+            <label for="item-name">Item Name</label>
+            <input type="text" id="item-name" placeholder="Enter item name" />
+          </div>
+
+          <div>
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" placeholder="Enter quantity" />
+          </div>
+
+          <div>
+            <label for="price">Price</label>
+            <input type="number" id="price" placeholder="Enter price" />
+          </div>
+
+          <div>
+            <label for="item Type">Item Type</label>
+            <input type="number" id="item-type" placeholder="Enter item type" />
+          </div>
+        </div>
+
+        <h2>CUSTOMER DETAILS</h2>
+
+        <div class="grid">
+          <div>
+            <label for="customer-name">Customer Name</label>
+            <input type="text" id="customer-name" placeholder="Enter customer name" />
+          </div>
+
+          <div>
+            <label for="customer-contact">Customer Contact</label>
+            <input type="text" id="customer-contact" placeholder="Enter customer contact" />
+          </div>
+        </div>
+
+        <button class="btn">RECORD SALE</button>
+      </div>
+
+      <!--SUMMARY -->
+      <div class="card">
+        <h2>SALES SUMMARY</h2>
+
+        <div class="summary-item">
+          <span>Subtotal</span>
+          <span>UGX 0</span>
+        </div>
+
+        <div class="summary-item">
+          <span>Tax </span>
+          <span>UGX 0</span>
+        </div>
+
+        <div class="summary-item">
+          <span>Discount</span>
+          <span>UGX 0</span>
+        </div>
+
+        <div class="total">TOTAL:UGX 0</div>
+
+        <button>PRINT RECEIPT</button>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
