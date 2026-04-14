@@ -75,8 +75,9 @@
       margin-bottom: 10px;
     }
     .card:hover {
-      color: #d97706;
-      background-color: #e3caad;
+      background-color:#fff7ed;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0,0 ,0.15);
     }
     .header:hover {
       color: #d97706;
@@ -153,6 +154,14 @@
       opacity: 0.8;
       position: relative;
       z-index: 1;
+      transition: all 0.3s ease;
+    }
+    .menu a.active {
+      background-color: #f59e0b;
+      color: #1f2937;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: bold;
     }
   </style>
   <body>
@@ -163,11 +172,12 @@
         <p>Hardware Management System</p>
       </div>
       <div class="menu">
-        <a href="index.html">LOGIN PAGE</a>
-        <a href="sales.html">SALES PAGE</a>
-        <a href="stock.html">STOCK PAGE</a>
-        <a href="customer_registration.html">CUSTOMER REGISTRATION</a>
-        <a href="customer_deposit.html">CUSTOMER DEPOSIT</a>
+        <a href="dashboard.html" class="active">🏠DASHBOARD</a>
+        <a href="index.html" >🔐LOGIN PAGE</a>
+        <a href="sales.html" >💰SALES PAGE</a>
+        <a href="stock.html">📦STOCK PAGE</a>
+        <a href="customer_registration.html" >👥CUSTOMER REGISTRATION</a>
+        <a href="customer_deposit.html" >💳CUSTOMER DEPOSIT</a>
       </div>
     </div>
     <div class="main">
