@@ -163,6 +163,30 @@
       border-radius: 8px;
       font-size: bold;
     }
+    .quick-actions button {
+      background: #f59e0b;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .quick-actions button:hover {
+      background: #d97706;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      color: white;
+    }
+    .quick-actions {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
   </style>
   <body>
     <div class="sidebar">
@@ -201,6 +225,11 @@
         <div class="card">
           <h3>GOODS SOLD ON CREDIT</h3>
           <p>250 ITEMS</p>
+        </div>
+        <div class="quick-actions">
+          <button onclick="location.href='sales.html'">+ ADD STOCK</button>
+          <button onclick="location.href='stock.html'">+ NEW SALE</button>
+          <button onclick="location.href='customer_registration.html'">+ ADD CUSTOMER</button>
         </div>
       </div>
     </div>
