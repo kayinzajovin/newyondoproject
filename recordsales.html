@@ -1,243 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sales Module</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sales Module</title>
 
-<style>
+    <style>
+      /* GENERAL  */
+      body {
+        margin: 0;
+        font-family: Arial;
+        background: #f4f6f8;
+      }
 
-/* ===== GENERAL ===== */
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #f4f6f8;
-}
+      .wrapper {
+        display: flex;
+      }
 
-.wrapper {
-    display: flex;
-}
+      /* SIDEBAR  */
+      .sidebar {
+        width: 220px;
+        height: 100vh;
+        background: #1f2a38;
+        color: white;
+        padding: 20px;
+      }
 
-/* ===== SIDEBAR ===== */
-.sidebar {
-    width: 220px;
-    height: 100vh;
-    background: #1f2a38;
-    color: white;
-    padding: 20px;
-}
+      .sidebar h2 {
+        text-align: center;
+        background: orange;
+        padding: 10px;
+        border-radius: 10px;
+      }
 
-.sidebar h2 {
-    text-align: center;
-    background: orange;
-    padding: 10px;
-    border-radius: 10px;
-}
+      .menu div {
+        margin: 12px 0;
+        padding: 10px;
+        border-radius: 8px;
+      }
 
-.menu div {
-    margin: 12px 0;
-    padding: 10px;
-    border-radius: 8px;
-}
+      .active {
+        background: #ddd;
+        color: black;
+      }
 
-.active {
-    background: #ddd;
-    color: black;
-}
+      /*  MAIN*/
+      .main {
+        flex: 1;
+        padding: 30px;
+      }
 
-/* ===== MAIN ===== */
-.main {
-    flex: 1;
-    padding: 30px;
-}
+      .header {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
 
-.header {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
+      .content {
+        display: flex;
+        gap: 20px;
+      }
 
-.content {
-    display: flex;
-    gap: 20px;
-}
+      /* CARDS */
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        flex: 1;
+      }
 
-/* CARDS */
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    flex: 1;
-}
+      /* INPUTS */
+      input {
+        width: 95%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
 
-/* INPUTS */
-input {
-    width: 95%;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
+      /* BUTTON */
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #1f2a38;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
 
-/* BUTTON */
-button {
-    width: 100%;
-    padding: 12px;
-    background: #1f2a38;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
+      /* RECEIPT  */
+      .receipt {
+        display: none; /* hidden first */
+        background: #eef1f4;
+        padding: 15px;
+        border-radius: 10px;
+      }
 
-/* ===== RECEIPT ===== */
-.receipt {
-    display: none; /* hidden first */
-    background: #eef1f4;
-    padding: 15px;
-    border-radius: 10px;
-}
+      /* SHOW RECEIPT WHEN TARGETED */
+      #receipt:target {
+        display: block;
+      }
 
-/* SHOW RECEIPT WHEN TARGETED */
-#receipt:target {
-    display: block;
-}
+      /* ROW STYLE */
+      .row {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+      }
 
-/* ROW STYLE */
-.row {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0;
-}
+      .total {
+        font-weight: bold;
+        font-size: 18px;
+      }
 
-.total {
-    font-weight: bold;
-    font-size: 18px;
-}
+      /* PRINT DESIGN ONLY */
+      .print-btn {
+        margin-top: 10px;
+        background: #1f2a38;
+        color: white;
+        padding: 12px;
+        text-align: center;
+        border-radius: 8px;
+      }
+      .menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 12px 0;
+        margin: 8px 0;
+        transition: 0.3s;
+        border-radius: 8px;
+      }
+      .header a:hover {
+        background: #fff7ed;
+        color: black;
+        font-weight: 700;
+      }
+      .menu a:hover,
+      .menu a.active {
+        background: #fff7ed;
+        color: black;
+        font-weight: 700;
+      }
+      .logo {
+        width: 55px;
+        height: 55px;
+        background: #f59e0b;
+        color: #1f2937;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: bold;
+        border-radius: 10px;
+        margin: 0 auto;
+      }
+      /* RESPONSIVE DESIGN*/
 
-/* PRINT DESIGN ONLY */
-.print-btn {
-    margin-top: 10px;
-    background: #1f2a38;
-    color: white;
-    padding: 12px;
-    text-align: center;
-    border-radius: 8px;
-}
- .menu a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 12px 0;
-    margin: 8px 0;
-    transition: 0.3s;
-    border-radius: 8px;
-  }
+      /* Tablets */
+      @media (max-width: 900px) {
+        .content {
+          flex-direction: column;
+        }
 
-  .menu a:hover,
-  .menu a.active {
-    background: #fff7ed;
-    color: black;
-    font-weight: 700;
-  }
-   .logo {
-    width: 55px;
-    height: 55px;
-    background: #f59e0b;
-    color: #1f2937;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: bold;
-    border-radius: 10px;
-    margin: 0 auto;
-  }
+        .sidebar {
+          width: 180px;
+        }
+      }
 
-</style>
-</head>
+      /* Phones */
+      @media (max-width: 600px) {
+        .wrapper {
+          flex-direction: column;
+        }
 
-<body>
+        .sidebar {
+          width: 100%;
+          height: auto;
+          text-align: center;
+        }
 
-<div class="wrapper">
+        .menu a {
+          display: inline-block;
+          margin: 5px;
+          padding: 10px;
+        }
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
+        .main {
+          padding: 15px;
+        }
+
+        .content {
+          flex-direction: column;
+        }
+
+        .card {
+          width: 100%;
+        }
+
+        input {
+          width: 100%;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
         <h2 class="logo">N</h2>
-    <p style="text-align: center;">Hardware System</p>
+        <p style="text-align: center">Hardware System</p>
         <div class="menu">
-     <a href="dashboard.html">🏠DASHBOARD</a>
-      <a href="index.html">🔐LOGIN PAGE</a>
-      <a href="sales.html" class="active">💰SALES PAGE</a>
-      <a href="stock.html">📦STOCK PAGE</a>
-      <a href="customer_registration.html">👥CUSTOMER REGISTRATION</a>
-      <a href="customer_deposit.html">💳CUSTOMER DEPOSIT</a>
+          <a href="dashboard.html">🏠DASHBOARD</a>
+          <a href="index.html">🔐LOGIN PAGE</a>
+          <a href="sales.html" class="active">💰SALES PAGE</a>
+          <a href="stock.html">📦STOCK PAGE</a>
+          <a href="customer_registration.html">👥CUSTOMER REGISTRATION</a>
+          <a href="customer_deposit.html">💳CUSTOMER DEPOSIT</a>
         </div>
-    </div>
+      </div>
 
-    <!-- MAIN -->
-    <div class="main">
-
+      <!-- MAIN -->
+      <div class="main">
         <div class="header">SALES MODULE</div>
 
         <div class="content">
+          <!-- LEFT: FORM -->
+          <div class="card">
+            <h3>Item Details</h3>
+            <input type="text" placeholder="Item Name" />
+            <input type="number" placeholder="Quantity" />
+            <input type="number" placeholder="Price" />
+            <input type="text" placeholder="Item Type" />
 
-            <!-- LEFT: FORM -->
-            <div class="card">
+            <h3>Customer Details</h3>
+            <input type="text" placeholder="Customer Name" />
+            <input type="text" placeholder="Customer Contact" />
 
-                <h3>Item Details</h3>
-                <input type="text" placeholder="Item Name">
-                <input type="number" placeholder="Quantity">
-                <input type="number" placeholder="Price">
-                <input type="text" placeholder="Item Type">
+            <!-- BUTTON -->
+            <a href="#receipt">
+              <button>RECORD SALE</button>
+            </a>
+          </div>
 
-                <h3>Customer Details</h3>
-                <input type="text" placeholder="Customer Name">
-                <input type="text" placeholder="Customer Contact">
+          <!-- RIGHT: RECEIPT (REPLACES SUMMARY) -->
+          <div class="card">
+            <h3>Receipt</h3>
 
-                <!-- BUTTON -->
-                <a href="#receipt">
-                    <button>RECORD SALE</button>
-                </a>
+            <div id="receipt" class="receipt">
+              <div class="row"><span>Item:</span><span>Cement</span></div>
+              <div class="row"><span>Quantity:</span><span>5</span></div>
+              <div class="row"><span>Price:</span><span>UGX 20,000</span></div>
 
+              <hr />
+
+              <div class="row">
+                <span>Subtotal:</span><span>UGX 100,000</span>
+              </div>
+              <div class="row"><span>Tax:</span><span>UGX 0</span></div>
+              <div class="row"><span>Discount:</span><span>UGX 0</span></div>
+
+              <div class="row total">
+                <span>Total:</span>
+                <span>UGX 100,000</span>
+              </div>
+
+              <div class="print-btn">PRINT RECEIPT</div>
             </div>
-
-            <!-- RIGHT: RECEIPT (REPLACES SUMMARY) -->
-            <div class="card">
-
-                <h3>Receipt</h3>
-
-                <div id="receipt" class="receipt">
-
-                    <div class="row"><span>Item:</span><span>Cement</span></div>
-                    <div class="row"><span>Quantity:</span><span>5</span></div>
-                    <div class="row"><span>Price:</span><span>UGX 20,000</span></div>
-
-                    <hr>
-
-                    <div class="row"><span>Subtotal:</span><span>UGX 100,000</span></div>
-                    <div class="row"><span>Tax:</span><span>UGX 0</span></div>
-                    <div class="row"><span>Discount:</span><span>UGX 0</span></div>
-
-                    <div class="row total">
-                        <span>Total:</span>
-                        <span>UGX 100,000</span>
-                    </div>
-
-                    <div class="print-btn">PRINT RECEIPT</div>
-
-                </div>
-
-            </div>
-
+          </div>
         </div>
-
+      </div>
     </div>
-
-</div>
-
-</body>
+  </body>
 </html>
