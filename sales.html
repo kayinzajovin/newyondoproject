@@ -1,290 +1,306 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NYONDO HARDWARE- SALES</title>
-</head>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
-  }
-
-  body {
-    background: #f4f6f8;
-    color: #111;
-  }
-
-  /*SIDE BAR*/
-  .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 250px;
-    height: 100vh;
-    background: #1f2937;
-    color: white;
-    padding: 20px;
-  }
-
-  .logo {
-    width: 55px;
-    height: 55px;
-    background: #f59e0b;
-    color: #1f2937;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: bold;
-    border-radius: 10px;
-    margin: 0 auto;
-  }
-
-  .brand {
-    text-align: center;
-    margin: 10px 0 25px;
-  }
-
-  .brand h2 {
-    font-size: 18px;
-  }
-
-  .brand p {
-    font-size: 12px;
-    opacity: 0.7;
-  }
-
-  .menu a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 12px 0;
-    margin: 8px 0;
-    transition: 0.3s;
-    border-radius: 8px;
-  }
-
-  .menu a:hover,
-  .menu a.active {
-    background: #f59e0b;
-    color: white;
-    font-weight: 600;
-  }
-
-  /*MAIN */
-  .main {
-    margin-left: 250px;
-    padding: 30px;
-  }
-
-  .topbar {
-    background: white;
-    padding: 15px 20px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-  }
-
-  .topbar h1 {
-    font-size: 20px;
-  }
-
-  /*LAYOUT */
-  .container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-  }
-
-  .card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  }
-
-  h2 {
-    font-size: 15px;
-    margin-bottom: 10px;
-    color: #1f2937;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 13px;
-  }
-
-  input {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-  }
-
-  input:focus {
-    border-color: #f59e0b;
-  }
-
-  button {
-    width: 100%;
-    padding: 13px;
-    background: #1f2937;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-
-  button:hover {
-    background: #f59e0b;
-    color: #1f2937;
-  }
-
-  .summary-item {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    padding: 10px;
-    background: #f9fafb;
-    border-radius: 8px;
-    font-size: 14px;
-  }
-
-  .btn {
-    margin-top: 20px;
-  }
-
-  .total {
-    font-size: 18px;
-    font-weight: bold;
-    color: #f59e0b;
-    margin-top: 15px;
-  }
-
-  @media (max-width: 768px) {
-    .main {
-      margin-left: 0;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NYONDO HARDWARE- SALES</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
     }
 
-    .container {
-      grid-template-columns: 1fr;
+    body {
+      background: #f4f6f8;
+      color: #111;
     }
 
+    /*SIDE BAR*/
     .sidebar {
-      position: relative;
-      width: 100%;
-      height: auto;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100vh;
+      background: #1f2937;
+      color: white;
+      padding: 20px;
     }
-  }
-</style>
 
-<body>
-  <!-- SIDE BAR -->
-  <div class="sidebar">
-    <div class="logo">N</div>
+    .logo {
+      width: 55px;
+      height: 55px;
+      background: #f59e0b;
+      color: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+      border-radius: 10px;
+      margin: 0 auto;
+    }
 
-    <div class="brand">
-      <h2>NYONDO</h2>
-      <p>Hardware System</p>
-    </div>
+    .brand {
+      text-align: center;
+      margin: 10px 0 25px;
+    }
 
-    <div class="menu">
-      <a href="dashboard.html">🏠DASHBOARD</a>
-      <a href="index.html">🔐LOGIN PAGE</a>
-      <a href="sales.html" class="active">💰SALES PAGE</a>
-      <a href="stock.html">📦STOCK PAGE</a>
-      <a href="customer_registration.html">👥CUSTOMER REGISTRATION</a>
-      <a href="customer_deposit.html">💳CUSTOMER DEPOSIT</a>
-    </div>
-  </div>
+    .brand h2 {
+      font-size: 18px;
+    }
 
-  <div class="main">
-    <div class="topbar">
-      <h1>SALES MODULE</h1>
-    </div>
+    .brand p {
+      font-size: 12px;
+      opacity: 0.7;
+    }
 
-    <div class="container">
-      <div class="card">
-        <h2>ITEM DETAILS</h2>
+    .menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 0;
+      margin: 8px 0;
+      transition: 0.3s;
+      border-radius: 8px;
+    }
 
-        <div class="grid">
-          <div>
-            <label for="item-name">Item Name</label>
-            <input type="text" id="item-name" placeholder="Enter item name" />
-          </div>
+    .menu a:hover,
+    .menu a.active {
+      background: #fff7ed;
+      color: black;
+      font-weight: 700;
+    }
 
-          <div>
-            <label for="quantity">Quantity</label>
-            <input type="number" id="quantity" placeholder="Enter quantity" />
-          </div>
+    /*MAIN */
+    .main {
+      margin-left: 250px;
+      padding: 30px;
+    }
 
-          <div>
-            <label for="price">Price</label>
-            <input type="number" id="price" placeholder="Enter price" />
-          </div>
+    .topbar {
+      background: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
 
-          <div>
-            <label for="item Type">Item Type</label>
-            <input type="number" id="item-type" placeholder="Enter item type" />
-          </div>
-        </div>
+    .topbar h1 {
+      font-size: 20px;
+    }
 
-        <h2>CUSTOMER DETAILS</h2>
+    /*LAYOUT */
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
 
-        <div class="grid">
-          <div>
-            <label for="customer-name">Customer Name</label>
-            <input type="text" id="customer-name" placeholder="Enter customer name" />
-          </div>
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
 
-          <div>
-            <label for="customer-contact">Customer Contact</label>
-            <input type="text" id="customer-contact" placeholder="Enter customer contact" />
-          </div>
-        </div>
+    h2 {
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: #1f2937;
+    }
 
-        <button class="btn">RECORD SALE</button>
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+
+    input {
+      width: 100%;
+      padding: 11px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #f59e0b;
+    }
+
+    button {
+      width: 100%;
+      padding: 13px;
+      background: #1f2937;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #fff7ed;
+      color: #1f2937;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px;
+      padding: 10px;
+      background: #f9fafb;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .btn {
+      margin-top: 10px;
+      background: #1f2a38;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .total {
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff7ed;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        margin-left: 0;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- SIDE BAR -->
+    <div class="sidebar">
+      <div class="logo">N</div>
+
+      <div class="brand">
+        <h2>NYONDO</h2>
+        <p>Hardware System</p>
       </div>
 
-      <!--SUMMARY -->
-      <div class="card">
-        <h2>SALES SUMMARY</h2>
-
-        <div class="summary-item">
-          <span>Subtotal</span>
-          <span>UGX 0</span>
-        </div>
-
-        <div class="summary-item">
-          <span>Tax </span>
-          <span>UGX 0</span>
-        </div>
-
-        <div class="summary-item">
-          <span>Discount</span>
-          <span>UGX 0</span>
-        </div>
-
-        <div class="total">TOTAL:UGX 0</div>
-
-        <button>PRINT RECEIPT</button>
+      <div class="menu">
+        <a href="dashboard.html">🏠DASHBOARD</a>
+        <a href="index.html">🔐LOGIN PAGE</a>
+        <a href="sales.html" class="active">💰SALES PAGE</a>
+        <a href="stock.html">📦STOCK PAGE</a>
+        <a href="customer_registration.html">👥CUSTOMER REGISTRATION</a>
+        <a href="customer_deposit.html">💳CUSTOMER DEPOSIT</a>
       </div>
     </div>
-  </div>
-</body>
 
+    <div class="main">
+      <div class="topbar">
+        <h1>SALES MODULE</h1>
+      </div>
+
+      <div class="container">
+        <div class="card">
+          <h2>ITEM DETAILS</h2>
+
+          <div class="grid">
+            <div>
+              <label for="item-name">Item Name</label>
+              <input type="text" id="item-name" placeholder="Enter item name" />
+            </div>
+
+            <div>
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" placeholder="Enter quantity" />
+            </div>
+
+            <div>
+              <label for="price">Price</label>
+              <input type="number" id="price" placeholder="Enter price" />
+            </div>
+
+            <div>
+              <label for="item Type">Item Type</label>
+              <input
+                type="number"
+                id="item-type"
+                placeholder="Enter item type"
+              />
+            </div>
+          </div>
+
+          <h2>CUSTOMER DETAILS</h2>
+
+          <div class="grid">
+            <div>
+              <label for="customer-name">Customer Name</label>
+              <input
+                type="text"
+                id="customer-name"
+                placeholder="Enter customer name"
+              />
+            </div>
+
+            <div>
+              <label for="customer-contact">Customer Contact</label>
+              <input
+                type="text"
+                id="customer-contact"
+                placeholder="Enter customer contact"
+              />
+            </div>
+          </div>
+          <div class="btn">
+            <a href="recordsales.html">RECORD SALES</a>
+          </div>
+        </div>
+
+        <!--SUMMARY -->
+        <div class="card">
+          <h2>SALES SUMMARY</h2>
+
+          <div class="summary-item">
+            <span>Subtotal</span>
+            <span>UGX 0</span>
+          </div>
+
+          <div class="summary-item">
+            <span>Tax </span>
+            <span>UGX 0</span>
+          </div>
+
+          <div class="summary-item">
+            <span>Discount</span>
+            <span>UGX 0</span>
+          </div>
+
+          <div class="total">TOTAL:UGX 0</div>
+
+          <button>PRINT RECEIPT</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
