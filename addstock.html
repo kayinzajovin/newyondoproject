@@ -14,7 +14,7 @@ body {
   background: #f4f6f8;
 }
 
-/* ===== SIDEBAR ===== */
+/* ===== SIDEBAR (DESKTOP) ===== */
 .sidebar {
   position: fixed;
   left: 0;
@@ -71,36 +71,9 @@ body {
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-
-  .sidebar {
-    display: none; /* hide sidebar completely on phone */
-  }
-
-  .main {
-    margin-left: 0;
-    padding: 15px;
-  }
-
-  .form-container {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .header {
-    text-align: center;
-    font-size: 18px;
-  }
-
-}
-/* ===== MAIN (FIXED SHIFT) ===== */
+/* ===== MAIN (DESKTOP SHIFT) ===== */
 .main {
-  margin-left: 270px; /* pushes content away from sidebar */
+  margin-left: 270px;
   padding: 30px;
 }
 
@@ -114,7 +87,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* CENTER FORM */
+/* FORM CONTAINER */
 .form-container {
   display: flex;
   justify-content: center;
@@ -153,6 +126,63 @@ button:hover {
   background: #16202b;
 }
 
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 768px) {
+
+  /* Sidebar becomes top */
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .menu a {
+    padding: 10px 12px;
+    margin: 5px;
+    font-size: 13px;
+  }
+
+  /* Main reset */
+  .main {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  /* Header */
+  .header {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* Form fix */
+  .form-container {
+    display: block;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
+
 </style>
 </head>
 
@@ -171,9 +201,9 @@ button:hover {
     <a href="dashboard.html">🏠 DASHBOARD</a>
     <a href="index.html">🔐 LOGIN PAGE</a>
     <a href="sales.html">💰 SALES PAGE</a>
-    <a href="stock.html">📦 STOCK PAGE</a>
+    <a href="stock.html" class="active">📦 STOCK PAGE</a>
     <a href="customer_registration.html">👥 CUSTOMER REGISTRATION</a>
-    <a href="customer_deposit.html" class="active">💳 CUSTOMER DEPOSIT</a>
+    <a href="customer_deposit.html">💳 CUSTOMER DEPOSIT</a>
   </div>
 </div>
 
@@ -182,7 +212,6 @@ button:hover {
 
   <div class="header">ADD STOCK</div>
 
-  <!-- CENTERED FORM -->
   <div class="form-container">
     <div class="card">
 
