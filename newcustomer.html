@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add New Customer</title>
+
+<style>
+
+/* ===== GENERAL ===== */
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f4f6f8;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background: #1f2937;
+  color: white;
+  padding: 20px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  background: #f59e0b;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.brand {
+  text-align: center;
+  margin: 10px 0 25px;
+}
+
+.brand h2 {
+  font-size: 18px;
+}
+
+.brand p {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+  background: #fff7ed;
+  color: black;
+  font-weight: 600;
+}
+
+/* ===== MAIN ===== */
+.main {
+  margin-left: 270px;
+  padding: 30px;
+}
+
+/* HEADER */
+.header {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* CENTER FORM */
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* INPUTS */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* TEXTAREA */
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #1f2a38;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16202b;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="logo">N</div>
+
+  <div class="brand">
+    <h2>NYONDO</h2>
+    <p>Hardware System</p>
+  </div>
+
+  <div class="menu">
+    <a href="dashboard.html">🏠 DASHBOARD</a>
+    <a href="index.html">🔐 LOGIN PAGE</a>
+    <a href="sales.html">💰 SALES PAGE</a>
+    <a href="stock.html">📦 STOCK PAGE</a>
+    <a href="customer_registration.html" class="active">👥 CUSTOMER REGISTRATION</a>
+    <a href="customer_deposit.html">💳 CUSTOMER DEPOSIT</a>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="header">ADD NEW CUSTOMER</div>
+
+  <div class="form-container">
+    <div class="card">
+
+      <h3>Customer Details</h3>
+
+      <input type="text" placeholder="Full Name">
+      <input type="text" placeholder="Phone Number">
+      <input type="text" placeholder="Email Address">
+      <input type="text" placeholder="Address">
+
+      <textarea placeholder="Additional Notes (optional)"></textarea>
+
+      <button>NEW CUSTOMER</button>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
