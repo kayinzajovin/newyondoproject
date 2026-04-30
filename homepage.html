@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nyondo General Hardware Ltd</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e2535;
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+      }
+
+      /* NAV */
+      nav {
+        background-color: #1e2535;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 99;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+
+      .badge {
+        width: 34px;
+        height: 34px;
+        background-color: #f5a623;
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #1e2535;
+      }
+
+      .brand-wrap {
+        display: flex;
+        flex-direction: column;
+      }
+      .brand {
+        font-size: 0.95rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      .brand span {
+        color: #ffffff;
+      }
+      .brand-sub {
+        font-size: 0.6rem;
+        color: #8892a4;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .btn-login {
+        background-color: transparent;
+        color: #ffffff;
+        padding: 6px 16px;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-login:hover {
+        border-color: #fff;
+        color: #fff;
+      }
+
+      /* HERO */
+      .hero {
+        text-align: center;
+        padding: 50px 5% 36px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50px;
+        padding: 4px 14px;
+        font-size: 0.65rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #c8d0dc;
+        margin-bottom: 14px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+        line-height: 1.15;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+      }
+
+      .hero h1 .accent {
+        color: #ffffff;
+      }
+
+      .hero p {
+        color: #8892a4;
+        font-size: 0.88rem;
+        max-width: 440px;
+        margin: 0 auto 10px;
+        line-height: 1.7;
+      }
+
+      .location-tag {
+        font-size: 0.75rem;
+        color: #8892a4;
+        margin-bottom: 22px;
+      }
+
+      .location-tag span {
+        color: #c8d0dc;
+        font-weight: bold;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background-color: #2a3347;
+        color: #ffffff;
+        padding: 10px 24px;
+        border-radius: 7px;
+        font-weight: bold;
+        font-size: 0.85rem;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .btn-primary:hover {
+        background-color: #374057;
+      }
+
+      .btn-outline {
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 7px;
+        font-size: 0.85rem;
+        text-decoration: none;
+      }
+
+      .btn-outline:hover {
+        border-color: #fff;
+        color: #fff;
+      }
+
+      /* STATS */
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .stat {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        padding: 18px 8px;
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .stat:last-child {
+        border-right: none;
+      }
+      .stat-num {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #ffffff;
+      }
+      .stat-label {
+        font-size: 0.65rem;
+        color: #8892a4;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 3px;
+      }
+
+      /* PRODUCTS */
+      .products {
+        padding: 32px 5%;
+      }
+
+      .section-label {
+        text-align: center;
+        font-size: 0.65rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #c8d0dc;
+        margin-bottom: 4px;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .products-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .prod-card {
+        background-color: #2a3347;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 16px 12px;
+        text-align: center;
+        width: 140px;
+      }
+
+      .prod-card:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      .prod-icon {
+        font-size: 1.6rem;
+        margin-bottom: 7px;
+      }
+      .prod-name {
+        font-weight: bold;
+        font-size: 0.82rem;
+        margin-bottom: 3px;
+      }
+      .prod-detail {
+        font-size: 0.68rem;
+        color: #8892a4;
+        line-height: 1.5;
+      }
+
+      /* FOOTER */
+      footer {
+        margin-top: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        padding: 14px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        font-size: 0.72rem;
+        color: #8892a4;
+      }
+
+      footer strong {
+        color: #ffffff;
+      }
+
+      @media (max-width: 500px) {
+        .hero h1 {
+          font-size: 1.6rem;
+        }
+        footer {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="nav-logo">
+        <div class="badge">N</div>
+        <div class="brand-wrap">
+          <span class="brand">NYONDO <span>HARDWARE</span></span>
+          <span class="brand-sub">General Hardware Ltd &middot; Nansana</span>
+        </div>
+      </a>
+      <a href="login.html" class="btn-login">Login</a>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow">Wholesale &amp; Retail &middot; Nansana, Uganda</div>
+      <h1>
+        Heavy &amp; Light<br /><span class="accent">Construction</span
+        ><br />Supplies
+      </h1>
+      <p>
+        Cement, iron bars, iron sheets, wire mesh, nails, wheelbarrows and more
+        — sourced direct from factory depots and delivered to your site.
+      </p>
+      <p class="location-tag">
+        &#128205; Located in <span>Nansana</span> &nbsp;&middot;&nbsp; Free
+        delivery within 10 km on orders above UGX 500,000
+      </p>
+      <div class="actions">
+        <a href="login.html" class="btn-primary">Access System</a>
+        <a href="tel:+256700000000" class="btn-outline">&#128222; Call Us</a>
+      </div>
+    </section>
+
+    <section class="products">
+      <div class="section-label">What We Stock</div>
+      <div class="section-title">Our Products</div>
+      <div class="products-grid">
+        <div class="prod-card">
+          <div class="prod-icon">&#129531;</div>
+          <div class="prod-name">Cement</div>
+          <div class="prod-detail">CEM II/N &amp; CEM III/N</div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-icon">&#9881;&#65039;</div>
+          <div class="prod-name">Iron Bars</div>
+          <div class="prod-detail">10 mm &middot; 12 mm &middot; 16 mm</div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-icon">&#127968;</div>
+          <div class="prod-name">Iron Sheets</div>
+          <div class="prod-detail">Various colors &amp; gauges</div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-icon">&#128297;</div>
+          <div class="prod-name">Nails</div>
+          <div class="prod-detail">
+            1&quot;, 3&quot;, 4&quot;, 5&quot; &amp; roofing &middot; 5 kg packs
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-icon">&#129530;</div>
+          <div class="prod-name">Wheelbarrows</div>
+          <div class="prod-detail">Heavy-duty grade</div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-icon">&#128376;&#65039;</div>
+          <div class="prod-name">Wire Mesh</div>
+          <div class="prod-detail">Standard &amp; reinforcement</div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-icon">&#127744;</div>
+          <div class="prod-name">Barbed Wire</div>
+          <div class="prod-detail">High &amp; low tensile</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span
+        >&copy; 2025 <strong>Nyondo General Hardware Ltd</strong> &middot;
+        Nansana, Uganda</span
+      >
+      <span
+        >Mon &ndash; Sat &nbsp;7 am &ndash; 7 pm &nbsp;&middot;&nbsp; &#128222;
+        +256 700 000 000</span
+      >
+    </footer>
+  </body>
+</html>
