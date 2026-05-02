@@ -1,243 +1,254 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Add Stock</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Stock</title>
 
-<style>
+    <style>
+      /* ===== GENERAL ===== */
+      body {
+        margin: 0;
+        font-family: Arial;
+        background: #f4f6f8;
+      }
 
-/* ===== GENERAL ===== */
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #f4f6f8;
-}
+      /* ===== SIDEBAR (DESKTOP) ===== */
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background: #1f2937;
+        color: white;
+        padding: 20px;
+      }
 
-/* ===== SIDEBAR (DESKTOP) ===== */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 250px;
-  height: 100vh;
-  background: #1f2937;
-  color: white;
-  padding: 20px;
-}
+      .logo {
+        width: 55px;
+        height: 55px;
+        background: #f59e0b;
+        color: #1f2937;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: bold;
+        border-radius: 10px;
+        margin: 0 auto;
+      }
 
-.logo {
-  width: 55px;
-  height: 55px;
-  background: #f59e0b;
-  color: #1f2937;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  font-weight: bold;
-  border-radius: 10px;
-  margin: 0 auto;
-}
+      .brand {
+        text-align: center;
+        margin: 10px 0 25px;
+      }
 
-.brand {
-  text-align: center;
-  margin: 10px 0 25px;
-}
+      .brand h2 {
+        font-size: 18px;
+      }
 
-.brand h2 {
-  font-size: 18px;
-}
+      .brand p {
+        font-size: 12px;
+        opacity: 0.7;
+      }
 
-.brand p {
-  font-size: 12px;
-  opacity: 0.7;
-}
+      .menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
 
-.menu a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 8px;
-  transition: 0.3s;
-}
+      .menu a:hover,
+      .menu a.active {
+        background: #fff7ed;
+        color: black;
+        font-weight: 600;
+      }
 
-.menu a:hover,
-.menu a.active {
-  background: #fff7ed;
-  color: black;
-  font-weight: 600;
-}
+      /* ===== MAIN (DESKTOP SHIFT) ===== */
+      .main {
+        margin-left: 270px;
+        padding: 30px;
+      }
 
-/* ===== MAIN (DESKTOP SHIFT) ===== */
-.main {
-  margin-left: 270px;
-  padding: 30px;
-}
+      /* HEADER */
+      .header {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
 
-/* HEADER */
-.header {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+      /* FORM CONTAINER */
+      .form-container {
+        display: flex;
+        justify-content: center;
+      }
 
-/* FORM CONTAINER */
-.form-container {
-  display: flex;
-  justify-content: center;
-}
+      /* CARD */
+      .card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        width: 400px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
 
-/* CARD */
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  width: 400px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+      /* INPUTS */
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
 
-/* INPUTS */
-input, select {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
+      /* BUTTON */
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #1f2a38;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
 
-/* BUTTON */
-button {
-  width: 100%;
-  padding: 12px;
-  background: #1f2a38;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
+      button:hover {
+        background: #16202b;
+      }
 
-button:hover {
-  background: #16202b;
-}
+      /* ===== MOBILE VIEW ===== */
+      @media (max-width: 768px) {
+        /* Sidebar becomes top */
+        .sidebar {
+          position: relative;
+          width: 100%;
+          height: auto;
+          padding: 15px;
+        }
 
-/* ===== MOBILE VIEW ===== */
-@media (max-width: 768px) {
+        .menu {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 6px;
+        }
 
-  /* Sidebar becomes top */
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 15px;
-  }
+        .menu a {
+          padding: 10px 12px;
+          margin: 5px;
+          font-size: 13px;
+        }
 
-  .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px;
-  }
+        /* Main reset */
+        .main {
+          margin-left: 0;
+          padding: 15px;
+        }
 
-  .menu a {
-    padding: 10px 12px;
-    margin: 5px;
-    font-size: 13px;
-  }
+        /* Header */
+        .header {
+          font-size: 18px;
+          text-align: center;
+        }
 
-  /* Main reset */
-  .main {
-    margin-left: 0;
-    padding: 15px;
-  }
+        /* Form fix */
+        .form-container {
+          display: block;
+        }
 
-  /* Header */
-  .header {
-    font-size: 18px;
-    text-align: center;
-  }
+        .card {
+          width: 100%;
+          max-width: 420px;
+          margin: 0 auto;
+        }
 
-  /* Form fix */
-  .form-container {
-    display: block;
-  }
+        input,
+        select {
+          font-size: 14px;
+        }
 
-  .card {
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
-  }
+        button {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
 
-  input,
-  select {
-    font-size: 14px;
-  }
+  <body>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="logo">N</div>
 
-  button {
-    font-size: 15px;
-  }
-}
+      <div class="brand">
+        <h2>NYONDO</h2>
+        <p>Hardware System</p>
+      </div>
 
-</style>
-</head>
-
-<body>
-
-<!-- SIDEBAR -->
-<div class="sidebar">
-  <div class="logo">N</div>
-
-  <div class="brand">
-    <h2>NYONDO</h2>
-    <p>Hardware System</p>
-  </div>
-
-  <div class="menu">
-    <a href="dashboard.html">🏠 DASHBOARD</a>
-    <a href="index.html">🔐 LOGIN PAGE</a>
-    <a href="sales.html">💰 SALES PAGE</a>
-    <a href="stock.html" class="active">📦 STOCK PAGE</a>
-    <a href="customer_registration.html">👥 CUSTOMER REGISTRATION</a>
-    <a href="customer_deposit.html">💳 CUSTOMER DEPOSIT</a>
-  </div>
-</div>
-
-<!-- MAIN -->
-<div class="main">
-
-  <div class="header">ADD STOCK</div>
-
-  <div class="form-container">
-    <div class="card">
-
-      <h3>Stock Details</h3>
-
-      <input type="text" placeholder="Item Name" />
-      <input type="number" placeholder="Quantity" />
-      <input type="number" placeholder="Buying Price" />
-      <input type="number" placeholder="Selling Price" />
-
-      <select>
-        <option>Select Category</option>
-        <option>Building Materials</option>
-        <option>Electrical</option>
-        <option>Plumbing</option>
-      </select>
-
-      <input type="text" placeholder="Supplier Name" />
-      <input type="date" />
-
-      <button>ADD STOCK</button>
-
+      <div class="menu">
+        <a href="dashboard.html">🏠 DASHBOARD</a>
+        <a href="index.html">🔐 LOGIN PAGE</a>
+        <a href="sales.html">💰 SALES PAGE</a>
+        <a href="stock.html" class="active">📦 STOCK PAGE</a>
+        <a href="customer_registration.html">👥 CUSTOMER REGISTRATION</a>
+        <a href="customer_deposit.html">💳 CUSTOMER DEPOSIT</a>
+      </div>
     </div>
-  </div>
 
-</div>
+    <!-- MAIN -->
+    <div class="main">
+      <div class="header">ADD STOCK</div>
 
-</body>
+      <div class="card">
+        <h3>Stock Details</h3>
+
+        <form method="POST">
+          {% csrf_token %}
+          <input type="text" name="name" placeholder="Item Name" required />
+          <input
+            type="number"
+            name="quantity"
+            placeholder="Quantity"
+            required
+          />
+          <input
+            type="number"
+            name="unit_cost"
+            placeholder="Buying Price"
+            required
+          />
+          <input
+            type="number"
+            name="unit_price"
+            placeholder="Selling Price"
+            required
+          />
+
+          <select name="category" required>
+            <option value="">Select Category</option>
+            <option value="cement">Cement</option>
+            <option value="iron_bars">Iron Bars</option>
+            <option value="iron_sheets">Iron Sheets</option>
+            <option value="nails">Nails</option>
+            <option value="wheelbarrows">Wheelbarrows</option>
+            <option value="wire_mesh">Wire Mesh</option>
+            <option value="barbed_wire">Barbed Wire</option>
+          </select>
+
+          <button type="submit">ADD STOCK</button>
+        </form>
+      </div>
+
+ 
+    </div>
+  </body>
 </html>
