@@ -237,45 +237,56 @@
           <!-- LEFT: FORM -->
           <div class="card">
             <h3>Item Details</h3>
-            <input type="text" placeholder="Item Name" />
-            <input type="number" placeholder="Quantity" />
-            <input type="number" placeholder="Price" />
-            <input type="text" placeholder="Item Type" />
 
-            <h3>Customer Details</h3>
-            <input type="text" placeholder="Customer Name" />
-            <input type="text" placeholder="Customer Contact" />
+            <form method="POST">
+              {% csrf_token %}
 
-            <!-- BUTTON -->
-            <a href="#receipt">
-              <button>RECORD SALE</button>
-            </a>
-          </div>
+              <select name="stock_id" required>
+                <option value="">Select Item</option>
+                {% for stock in stocks %}
+                <option value="{{ stock.id }}">{{ stock.name }}</option>
+                {% endfor %}
+              </select>
 
-          <!-- RIGHT: RECEIPT (REPLACES SUMMARY) -->
-          <div class="card">
-            <h3>Receipt</h3>
+              <input
+                type="number"
+                name="quantity_sold"
+                placeholder="Quantity"
+                required
+              />
+              <input
+                type="number"
+                name="unit_price"
+                placeholder="Price"
+                required
+              />
+              <input
+                type="number"
+                name="total_amount"
+                placeholder="Total Amount"
+                required
+              />
 
-            <div id="receipt" class="receipt">
-              <div class="row"><span>Item:</span><span>Cement</span></div>
-              <div class="row"><span>Quantity:</span><span>5</span></div>
-              <div class="row"><span>Price:</span><span>UGX 20,000</span></div>
+              <select name="payment_type" required>
+                <option value="">Payment Type</option>
+                <option value="cash">Cash</option>
+                <option value="credit">Credit</option>
+              </select>
 
-              <hr />
+              <h3>Customer Details</h3>
+              <input
+                type="text"
+                name="customer_name"
+                placeholder="Customer Name"
+              />
+              <input
+                type="text"
+                name="customer_contact"
+                placeholder="Customer Contact"
+              />
 
-              <div class="row">
-                <span>Subtotal:</span><span>UGX 100,000</span>
-              </div>
-              <div class="row"><span>Tax:</span><span>UGX 0</span></div>
-              <div class="row"><span>Discount:</span><span>UGX 0</span></div>
-
-              <div class="row total">
-                <span>Total:</span>
-                <span>UGX 100,000</span>
-              </div>
-
-              <div class="print-btn">PRINT RECEIPT</div>
-            </div>
+              <button type="submit">RECORD SALE</button>
+            </form>
           </div>
         </div>
       </div>

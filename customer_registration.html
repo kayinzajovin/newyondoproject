@@ -70,7 +70,7 @@
 
     .menu a:hover,
     .menu a.active {
-      background:  #fff7ed;
+      background: #fff7ed;
       color: black;
       font-weight: 600;
     }
@@ -149,7 +149,7 @@
     }
 
     button:hover {
-      background:  #fff7ed;
+      background: #fff7ed;
       color: #1f2937;
     }
 
@@ -170,7 +170,7 @@
     .total {
       font-size: 18px;
       font-weight: bold;
-      color:  #fff7ed;
+      color: #fff7ed;
       margin-top: 15px;
     }
 
@@ -221,57 +221,60 @@
         <div class="card">
           <h2>CUSTOMER DETAILS</h2>
 
-          <div class="grid">
-            <div>
-              <label for="customer-name">Customer Name</label>
-              <input
-                type="text"
-                id="customer-name"
-                placeholder="Enter customer name"
-              />
+          <form method="POST">
+            {% csrf_token %}
+
+            <div class="grid">
+              <div>
+                <label>Customer Name</label>
+                <input
+                  type="text"
+                  name="full_name"
+                  placeholder="Enter customer name"
+                  required
+                />
+              </div>
+              <div>
+                <label>Customer NIN</label>
+                <input
+                  type="text"
+                  name="nin"
+                  placeholder="Enter customer NIN"
+                  required
+                />
+              </div>
             </div>
 
-            <div>
-              <label for="customer-NIN">Customer NIN</label>
-              <input
-                type="text"
-                id="customer-NIN"
-                placeholder="Enter customer NIN"
-              />
-            </div>
-          </div>
+            <h2>CONTACT INFORMATION</h2>
 
-          <h2>CONTACT INFORMATION</h2>
-
-          <div class="grid">
-            <div>
-              <label for="Phone Number">Phone Number</label>
-              <input
-                type="tel"
-                id="Phone -number"
-                placeholder="Enter phone number"
-              />
+            <div class="grid">
+              <div>
+                <label>Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Enter phone number"
+                  required
+                />
+              </div>
+              <div>
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter email" />
+              </div>
             </div>
 
-            <div>
-              <label for="date">Customer's Email</label>
-              <input type="email" id="customer-email" />
-            </div>
-          </div>
+            <h2>CUSTOMER'S LOCATION</h2>
 
-          <h2>CUSTOMER'S LOCATION</h2>
-
-          <div class="grid">
-            <div>
-              <label for="product-name">CITY</label>
-              <input type="text" id="unit-cost" placeholder="Enter unit cost" />
+            <div class="grid">
+              <div>
+                <label>Address / Location</label>
+                <input type="text" name="address" placeholder="Enter address" />
+              </div>
             </div>
 
-            <div>
-              <label for="quantity">ADDRESS/LOCATION</label>
-              <input type="text" id="address" placeholder="Enter address" />
-            </div>
-          </div>
+            <br />
+            <button type="submit">REGISTER CUSTOMER</button>
+          </form>
         </div>
       </div>
     </div>
